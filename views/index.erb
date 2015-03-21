@@ -1,0 +1,30 @@
+<h2 class="content-subhead">ユースケーステンプレート</h2>
+
+<form action="/" method="POST" class="pure-form pure-form-aligned">
+  <fieldset>
+    <div class="pure-control-group">
+      <label for="usecase[name]">ユースケース名</label>
+      <input id="usecase_name" name="usecase[name]" type="text" class="pure-input-2-3" placeholder="返却レシートを発行する">
+    </div>
+    <div class="pure-control-group">
+      <label for="usecase[summary]">概要</label>
+      <textarea id="usecase_summary" name="usecase[summary]" type="text" class="pure-input-2-3" placeholder="顧客が返却した空きカン・ビン・カゴを受け取って、支払額を計算し、そのレシート（証明書）を発行する"></textarea>
+    </div>
+    <div class="pure-controls">
+      <button type="submit" class="pure-button pure-button-primary">マークダウンで出力</button>
+    </div>
+  </fieldset>
+</form>
+
+<% if @usecase %>
+<pre class="code" data-language="html">
+## ユースケース名
+
+<%= @usecase.name %>
+
+
+## 概要
+
+<%= @usecase.summary %>
+</pre>
+<% end %>
